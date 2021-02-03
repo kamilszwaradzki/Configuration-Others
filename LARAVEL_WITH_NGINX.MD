@@ -91,6 +91,7 @@ Now go to the test directory to access the storage permission. Remember, you mus
 `mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.old`
 
 Here, we have to edit the Nginx server script according to the PHP framework that we have set previously to make an environment for the Laravel PHP framework. Use the command-line given below to edit the default settings of the Nginx server.
+
 `gedit /etc/nginx/sites-available/default`
 
 Now copy and paste the following script given below into your Nginx server script. Then save and exit the script.
