@@ -2,28 +2,28 @@
 ## Step 1: Install Nginx Server on Ubuntu
 To install the Nginx server inside your Ubuntu machine, 
 you can use the following apt command-line in your terminal shell.
-<br>
+
 `sudo apt update && sudo apt upgrade`<br>
 `sudo apt install nginx -y`
 
 Once the Nginx server is installed, you can verify the Nginx server by checking it’s version and configuration settings.
-<br>
+
 `nginx -v`<br>
 `sudo nginx -t`
 
 Now run the following terminal command lines to enable and start the Nginx server on your Ubuntu machine.
-<br>
+
 `systemctl start nginx`<br>
 `systemctl enable nginx`
 
 Be careful if you have any previous PHP framework or Apache server installed inside your Ubuntu machine; make sure you have cleaned the previous packages correctly. You can check the open the port of Nginx. Normally the open port of Nginx is 80. To check Nginx’s open port, I am using the curl command tool on Ubuntu. If you don’t have the cURL installed inside your machine, install the cURL tool first.
-<br>
+
 `sudo apt install curl`<br>
 `curl -I localhost`
 
 ## Step 2: Install Mysql Database for PHP Framework
 Then start and enable the MySQL server by using the terminal commands given below.
-<br>
+
 `sudo apt-get install mysql-server -y`<br>
 `systemctl start mysql`<br>
 `systemctl enable mysql`
@@ -31,28 +31,28 @@ Then start and enable the MySQL server by using the terminal commands given belo
 ## Step 3: Install PHP Framework on Ubuntu Linux
 
 Here, we are going to install the PHP framework on our Ubuntu machine. We will install the PHP fast process manager, document object model (DOM), PHP MySQL extension, and multi-byte string functions alongside the PHP framework. All the extension packages are required to run the Laravel PHP framework smoothly on your machine. You can copy and paste the following command line in your terminal shell to install the PHP framework and extension packages.
-<br>
+
 `sudo apt install php7.3 php7.3-fpm php7.3-mysql php7.3-mbstring php7.3-dom -y`
 
 Now we can install the Mcrypt PHP extension to make the PHP framework more encrypted and secure. Use the following command lines to install the Mycrypt PHP extension on your Ubuntu device.
-<br>
+
 `sudo apt install php7.3-dev libmcrypt-dev gcc make autoconf libc-dev pkg-config vim -y`<br>
 `sudo pecl install mcrypt-1.0.1`
 
 In this step, we have to edit the configuration script of the PHP-FPM (Fast Process Manager) to add the new address and remove the default address. Using the Gedit text editor to edit the configuration script, you can use any script editor you want. Use the following command line to edit the configuration script.
-<br>
+
 `sudo vim /etc/php/7.3/fpm/pool.d/www.conf`
 
 Now find the following line inside the `www.conf` script. Make the line as a comment line by adding a ; before the line.
-<br>
+
 `listen = /run/php/php7.3-fpm.sock`
 
 Now add a new line into the script to add a new server address. Here, I am using the localhost address and port 8000.
-<br>
+
 `listen = 127.0.0.1:8000;`
 
 Now save the script file and restart and enable the PHP framework on your Ubuntu machine. Then restart the Nginx server.
-<br>
+
 `systemctl restart php7.3-fpm`<br>
 `systemctl enable php7.3-fpm`<br>
 `systemctl restart nginx`
@@ -116,6 +116,7 @@ server {
 ```
 
 Now, restart the Nginx server to refresh the Laravel PHP framework on your Ubuntu machine. If you have done everything right, you will be able to load the Laravel PHP framework on your web browser by entering the IP address and port you set.
+
 `systemctl restart nginx`
 
 ## Remove Laravel PHP Framework from Ubuntu Linux
