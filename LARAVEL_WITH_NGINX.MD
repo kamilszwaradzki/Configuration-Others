@@ -43,7 +43,7 @@ In this step, we have to edit the configuration script of the PHP-FPM (Fast Proc
 
 `sudo vim /etc/php/7.3/fpm/pool.d/www.conf`
 
-Now find the following line inside the `www.conf` script. Make the line as a comment line by adding a ; before the line.
+Now find the following line inside the `www.conf` script. Make the line as a comment line by adding a `;` before the line.
 
 `listen = /run/php/php7.3-fpm.sock`
 
