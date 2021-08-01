@@ -68,19 +68,19 @@ http://localhost2     //has document root /opt/lampp/{your-project}/public
 When Laravel creates files on extension installations or any other operation, it uses the default mask 755 for folders and 644 for files. These permissions are correct and secure for production servers but it will give us problems on our local server because our editor will not be able to edit those files and folders. To fix these problems, simply run again this command:
 
 `cd /opt/lampp/{your-project}`<br/>
-`sudo chown -R $USER:www-data storage`<br/>
-`sudo chown -R $USER:www-data bootstrap/cache`<br/>
+`sudo chown -R $USER:daemon storage`<br/>
+`sudo chown -R $USER:daemon bootstrap/cache`<br/>
 `chmod -R 775 storage`<br/>
 `chmod -R 775 bootstrap/cache`<br/>
 
 An other option is to configure the default Apache owner and group. For all new files created by the server these settings are used. We can change the in the environment variables file. Run this command to open and edit the file:
 
-`sudo gedit /opt/lampp/bin/envvars`<br/>
+`sudo gedit /opt/lampp/etc/httpd.conf`<br/>
 
-Find the following lines and change them this way (replace "youruser" with your current username):
+Find the following lines and change them this way (replace "daemon" with your current username):
 <pre>
-export APACHE_RUN_USER=youruser
-export APACHE_RUN_GROUP=www-data
+User daemon
+Group daemon
 </pre>
 Restart apache with the following command:
 
