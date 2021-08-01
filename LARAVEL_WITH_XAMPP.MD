@@ -75,7 +75,7 @@ When Laravel creates files on extension installations or any other operation, it
 
 An other option is to configure the default Apache owner and group. For all new files created by the server these settings are used. We can change the in the environment variables file. Run this command to open and edit the file:
 
-`sudo gedit /etc/apache2/envvars`<br/>
+`sudo gedit /opt/lampp/bin/envvars`<br/>
 
 Find the following lines and change them this way (replace "youruser" with your current username):
 <pre>
