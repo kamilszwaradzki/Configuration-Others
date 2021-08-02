@@ -25,9 +25,9 @@ We creates virtual host for is a method for hosting multiple domain names on a s
 We will following step to create virtual host.
 
 ### Step 1
-Go to /opt/lampp/etc/httpd.conf And open httpd.conf.
+Go to `/opt/lampp/etc/httpd.conf` And open `httpd.conf`.
 
-Now search "#Include conf/extra/httpd-vhosts.conf" and remove "#" sign in front of "Include conf/extra/httpd-vhosts.conf".
+Now search `#Include conf/extra/httpd-vhosts.conf` and remove `#` sign in front of `Include conf/extra/httpd-vhosts.conf`.
 
 ### Step 2
 Open httpd-vhosts.conf file located in "/opt/lampp/etc/extra/httpd-vhosts.conf" and add following code.
