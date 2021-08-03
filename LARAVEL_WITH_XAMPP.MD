@@ -43,6 +43,8 @@ ServerAlias www.localhost
     ServerName localhost2
     DocumentRoot <font color="#AD7FA8">&quot;/opt/lampp/{your-project}/public&quot;</font>
     &lt;Directory <font color="#AD7FA8">&quot;/opt/lampp/{your-project}/public&quot;</font>&gt;
+        DirectoryIndex /index.php
+        FallbackResource /index.php
         Options +Indexes +Includes +FollowSymLinks +MultiViews
         AllowOverride All
         Require local
